@@ -1,0 +1,116 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package FunProject;
+import java.util.Scanner;
+/**
+ *
+ * @author tyler.gielata
+ */
+public class FinalProjectFun {
+    public static void main(String[] brady){
+    Scanner namescanner = new Scanner(System.in);
+        String pOneplayername;
+    Scanner teamscanner = new Scanner(System.in);    
+        String playerteam;
+    Scanner touchdownscanner = new Scanner(System.in);
+        String playerposition;
+    
+    
+        int touchdowns;
+    Scanner yard = new Scanner(System.in);
+        double yards;
+    Scanner interception = new Scanner(System.in);
+        int interceptions;
+    Scanner fumble = new Scanner(System.in);
+        int fumbles;
+    Scanner otherplayers = new Scanner(System.in);
+        String players;
+        
+        System.out.println("FANTASTY FOOTBALL POINTS CALCULATOR");
+        
+        System.out.println("Enter Player Name:");
+        pOneplayername = namescanner.next();
+        
+        System.out.println("Enter Player Position:");
+        playerposition = namescanner.next();
+        
+        
+        System.out.println("Enter Player Team:");
+        playerteam = teamscanner.next();
+        
+        System.out.println("Enter " + pOneplayername+"'s touchdowns");
+        touchdowns = touchdownscanner.nextInt();
+        
+        System.out.println("Enter " + pOneplayername+"'s yards");
+        yards = yard.nextDouble();
+        
+        System.out.println("Enter " + pOneplayername+"'s interceptions");
+        interceptions = interception.nextInt();
+        
+        System.out.println("Enter " + pOneplayername+"'s fumbles");
+        fumbles = fumble.nextInt();
+        
+        computePlayerScore(touchdowns, yards, interceptions, fumbles);
+        double output = computePlayerScore(touchdowns, yards, interceptions, fumbles);
+        System.out.println("Total Fantasy Points For Player 1 is " + output);
+        
+        System.out.println("Enter Player 2 Name");
+        players = otherplayers.next();
+        
+        System.out.println("Enter Player Position:");
+        playerteam = teamscanner.next();
+        
+        System.out.println("Enter " + players +"'s team");
+        playerteam = teamscanner.next();
+        
+        System.out.println("Enter " + players +"'s touchdowns");
+        touchdowns = touchdownscanner.nextInt();
+        
+        System.out.println("Enter " + players +"'s yards");
+        yards = yard.nextDouble();
+        
+        System.out.println("Enter " +players +"'s interceptions");
+        interceptions = interception.nextInt();
+        
+        System.out.println("Enter "+ players+"'s fumbles");
+        fumbles = fumble.nextInt();
+        
+        computePlayerScore(touchdowns, yards, interceptions, fumbles);
+          double output2 = computePlayerScore(touchdowns, yards, interceptions, fumbles);
+        System.out.println("Total Fantasy Points For Player 2 is " + output2);
+        double total = (output +output2);
+        System.out.println("Fantasy Team Points is "+total);
+    }
+    public static double computePlayerScore(int numTouchDowns, double yards, int numinterceptions, int numfumbles){
+        double fantasyPoints = 0;
+        double pointsTouchDowns;
+        double pointsYards;
+        double pointsInterceptions;
+        double pointsFumbles;
+        
+        pointsTouchDowns = 6 * numTouchDowns;
+        
+        pointsYards = yards / 10.0;
+        
+        pointsInterceptions = fantasyPoints - numinterceptions;
+
+        pointsFumbles = fantasyPoints - numfumbles;
+        
+        fantasyPoints = pointsTouchDowns + pointsYards + pointsInterceptions + pointsFumbles;
+        
+        return fantasyPoints;
+        
+    }
+   // public static int toucdownsrandom(){
+        
+        //random touchdowns = new Random();
+        
+        //return touchdowns = next int (5);
+        
+    }
+   
+    
+//}
